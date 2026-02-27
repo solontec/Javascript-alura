@@ -10,17 +10,19 @@ function validarEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
+
+
 function gerarHash(senha){
     const saltRounds = 10;
     const senhaHash = bycript.hashSync(senha, saltRounds);
 
     return senhaHash;
 }
-rl.question("Digite seu nome: ", (nome) => {
-    rl.question("Digite sua idade: ", (idade) => {
-        console.log('Olá, ${nome}!');
-        rl.question("Digite seu email: ", (email) => {
-            rl.question("Digite sua senha: ", (senha) => {
+rl.question("Write your name: ", (nome) => {
+    rl.question("Write your age: ", (idade) => {
+        console.log('Hi, ${nome}!');
+        rl.question(" Write your email: ", (email) => {
+            rl.question("Write your password: ", (senha) => {
 
                 //generate hash
                 
@@ -43,7 +45,8 @@ rl.question("Digite seu nome: ", (nome) => {
         console.log(`Olá, ${nome}!`);
         console.log(`Seu email é: ${email}`);
         console.log(`Sua senha criptografada é: ${senhaHash}`);
-
+        
+    ""
         rl.close();
     });
     });
